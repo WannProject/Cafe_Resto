@@ -1,0 +1,582 @@
+/*ini adalah link google font gunanya untuk dapat mengakses font roboto dengan mudah*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/*Dengan menggunakan @import, Anda dapat memisahkan kode CSS Anda ke dalam beberapa file yang berbeda untuk memudahkan pengelolaan dan pemeliharaan.*/
+/*******************************************************************************************************************/
+
+:root {
+  /*selector ini berfungsi menunjukkan bahwa atribut atribut yang di terapkan pada selector tersebut akan bisa di panggil di selector lain*/
+  --main-color: #d3ad7f; /*nilai dari atribut color pada element body*/
+  --black: #13131a;
+  --bg: #030306; /*nilai dari atribut background-color element body*/
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3); /*nilai dari atribut border pada element button*/
+}
+/******************************************************************************************************************/
+
+/*****bagian yang akan mengatur tampilan halaman secara keseluruhan*****/
+
+* {
+  /* selector tanda bintang tersebut gunanya untuk mengatur semua element pada html*/
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /*digunakan untuk mengatur bagaimana ukuran sebuah elemen HTML akan ditentukan agar lebih stabil dan mudah di kontrol.*/
+  outline: none; /*untuk menghilangkan garis*/
+  border: none;
+  text-transform: capitalize; /*setiap kata akan di awali huruf besar*/
+  text-decoration: none;
+  transition: 0.2s linear; /*menambahkan efek transisi*/
+}
+/*****************************************************************************************************************/
+
+/*style untuk mengatur tampilan scrol baar*/
+html::-webkit-scrollbar {
+  /* selektor ini hanya akan diterapkan pada browser yang menggunakan rendering engine Webkit, seperti Google Chrome dan Safari*/
+  width: 12px; /*mengatur lebar scrollbar*/
+}
+
+html::-webkit-scrollbar-track {
+  /* selector ini akan mengatur tampilan track (area di seblah scrollbar yang terlihat saat scrollbar tidak di geser)*/
+  background: transparent; /*atribut ini berfungsi agar scrolbar tidak akan terlihat atau transparan*/
+}
+
+html::-webkit-scrollbar-thumb {
+  /*Selector ini akan mengatur tampilan thumb (bagian dari scrollbar yang dapat digeser untuk menggeser isi elemen HTML)*/
+  background: #fff; /**/
+  border-radius: 5rem;
+}
+/******************************************************************************************************************/
+
+/*style background pada body*/
+body {
+  background: var(--bg); /*mengatur warna background dengan memanggil atribut dari root*/
+}
+/******************************************************************************************************************/
+
+/*style konten bagian halaman utama*/
+section {
+  padding: 2rem 7%; /* ruang di dalam elemen tersebut akan sebesar 2 rem di seluruh sisi, kecuali di sisi kiri dan kanan yang akan sebesar 7% dari lebar elemen*/
+}
+/******************************************************************************************************************/
+
+/*style untuk bagian menu about*/
+.heading {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase; /*text akan berubah menjadi huruf besar*/
+  padding-bottom: 3.5rem;
+  font-size: 40pt;
+}
+
+.heading span {
+  color: var(--main-color);
+  text-transform: uppercase; /*teks akan berubah menjadi huruf besar*/
+}
+
+/*****************************************************************************************************************/
+
+/*style untuk tombol button*/
+.btn {
+  margin-top: 1rem; /*Margin adalah ruang di luar elemen yang berfungsi untuk menjaga jarak antar elemen*/
+  display: inline-block; /*elemen akan terletak di baris yang sama dengan elemen lainnya*/
+  padding: 0.8rem 3rem;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  color: #fff;
+  background: var(--main-color);
+  cursor: pointer; /*kursor akan berubah menjadi bentuk tangan jika berada di atas element button*/
+}
+.btn:hover {
+  letter-spacing: 1px; /*menentukan jarak antara perkarakter jika kursor berada di atasnya dengan sebesar .2rem*/
+}
+
+/**********************************end*************************************************************************/
+
+/*style untuk header*/
+.header .logo h2 {
+  color: moccasin;
+  font-size: 25pt;
+  font-family: Gabriola;
+}
+
+.header {
+  background: var(--bg);
+  display: flex; /*mengatur tata letak anak elemennya dengan lebih fleksibel dan mudah.*/
+  align-items: center; /*anak elemen tersebut akan terletak di tengah-tengah secara vertikal dari elemen induknya*/
+  justify-content: space-between; /*akan mengatur secara merata dengan jarak yang sama di antara elemen elemen tersebut*/
+  padding: 1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed; /*menyebabkan elemen tersebut ditempatkan pada posisi yang telah ditentukan*/
+  top: 0;
+  left: 0;
+  right: 0; /*akan menempatkan elemen HTML pada bagian atas, kiri, dan kanan layar*/
+  z-index: 1000; /*akan menempatkan elemen tersebut di atas layer-layer di bawahnya*/
+}
+
+.header .navbar a {
+  margin: 0 1rem; /*menentukan bahwa jarak antara elemen dengan elemen lainnya sebesar 0 pada sisi atas dan bawah, serta 1 rem pada sisi kiri dan kanan*/
+  font-size: 19px;
+  color: #fff;
+}
+
+.header .navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 0.1rem solid var(--main-color); /*menambahkan batas bawah dengan lebar 0,1  yang terdiri dari garis solid dengan warna yang ditentukan oleh variabel --main-color*/
+  padding-bottom: 0.3rem; /*Atribut ini akan memberikan ruang penambahan dengan lebar 0,3 ukuran font terpilih*/
+}
+
+/*style tombol order*/
+.header .icon a {
+  background-color: var(--main-color);
+  padding: 5px 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  border-radius: 10px;
+  font-family: Gabriola;
+  color: #fff;
+  cursor: pointer; /*mengubah kursor menjadi bentuk tangan*/
+  font-size: 23pt;
+  margin-left: 2rem; /*memberikan ruang pada sisi kiri*/
+}
+
+.header .icon a:hover {
+  background: #fff;
+  color: #d3ad7f;
+}
+
+.header .icon i {
+  color: #fff;
+  cursor: pointer; /*mengubah kursor menjadi bentuk tangan*/
+  font-size: 18pt;
+  margin-left: 2rem; /*memberikan ruang pada sisi kiri*/
+}
+
+#menu-btn {
+  display: none; /*menyembunyikan element html*/
+}
+
+/*style button bagian menu*/
+.header .navbar button {
+  background: transparent;
+  border: 0;
+}
+/***************************************end******************************************************/
+
+/*style untuk menu dropdown*/
+
+.dropdown {
+  position: relative; /*elemen akan di tempatkan sesuai dengan posisi aslinya*/
+  display: inline-block; /*elemen akan memiliki lebar dan tinggi yang di tentukan dan di tampilkan di baris teks bersama dengan teks lainnya*/
+}
+
+.dropdown-content {
+  display: none; /*atribut ini akan menghilangkan list yang ada di menu*/
+  position: absolute;
+  z-index: 1; /*menentukan tingkat overlaying (superposisi) suatu elemen terhadap elemen lainnya.*/
+}
+
+.dropdown-content a {
+  padding: 10px 10px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 15px;
+  display: block; /*menentukan bagaimana sebuah elemen harus ditampilkan dalam halaman web.*/
+}
+
+.header .dropdown-content a:hover {
+  color: var(--main-color);
+  border-bottom: 0rem solid var(--main-color); /*menambahkan batas bawah dengan lebar 0,1  yang terdiri dari garis solid dengan warna yang ditentukan oleh variabel --main-color*/
+  padding-bottom: 0.2rem;
+  padding-top: 0.4rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /*menentukan bagaimana sebuah elemen harus ditampilkan dalam halaman web.*/
+}
+
+.header .icon i:hover {
+  color: var(--main-color);
+}
+
+/*********************************end***************************************************************************/
+
+/*bagian konten untuk home*/
+.home {
+  min-height: 100vh; /*tinggi minimal elemen sama dengan tinggi area yang dapat dilihat dari browser*/
+  display: flex; /*mengatur tata letak anak elemennya dengan lebih fleksibel dan mudah di atur.*/
+  align-items: center; /*anak anka akan berada di tengah*/
+  background: url(../img/background.png) no-repeat; /*Nilai no-repeat menyatakan bahwa gambar tidak boleh diulang-ulang.*/
+  background-size: cover; /*gambar akan dikembangkan seluas mungkin untuk menutupi seluruh elemen*/
+  background-position: center; /*gambar akan berada di tengah tengah halaman*/
+}
+
+.home .content {
+  max-width: 60rem; /*lebar maksimal elemen tersebut adalah 60 rem*/
+  padding-top: 3rem;
+}
+
+.home .content h3 {
+  font-size: 38pt;
+  text-transform: uppercase; /*semua teks dalam elemen tersebut akan ditampilkan dalam huruf besar*/
+  color: #fff;
+}
+
+.home .content h4 {
+  font-size: 20pt;
+  text-transform: uppercase; /*semua teks dalam elemen tersebut akan ditampilkan dalam huruf besar*/
+  color: #fff;
+}
+
+.home .content p {
+  font-size: 14pt;
+  font-weight: lighter; /* Atribut ini menentukan ketebalan font dari teks dalam elemen tersebut. font dari teks akan lebih ringan daripada font default*/
+  line-height: 20px; /*Atribut ini menentukan tinggi baris dari teks dalam elemen tersebut.*/
+  padding: 1rem 0;
+  color: #eee;
+}
+.content a {
+  border-radius: 10px;
+}
+
+/*******************************************end***************************************************************/
+
+/*style untuk konten dari about*/
+.about h1 {
+  padding-top: 75px;
+  font-size: 35pt;
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  gap: 1rem; /*mengatur jarak antara gambar dan teks */
+}
+
+.about .row .image {
+  flex: 1 1 30rem;
+}
+
+.about .row .image img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 45rem; /*mengatur elemen untuk tumbuh atau menyusut sesuai dengan ruang yang tersedia dalam flexbox*/
+  padding: 2rem;
+}
+
+.about .content h4 {
+  text-align: center;
+  font-size: 25pt;
+  color: #fff;
+}
+
+.about .row .content p {
+  font-size: 13pt;
+  color: #ccc;
+  padding: 1rem 0;
+  line-height: 1.8; /*digunakan untuk menentukan jarak antara dua baris teks yang berdekatan.*/
+}
+
+/****************************************************************************************************************/
+
+/*style untuk bagian menu*/
+.menu h1 {
+  font-size: 2.5rem;
+  padding-top: 75px;
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.5rem;
+}
+
+.menu .box-container .box {
+  padding: 3.5rem;
+  text-align: center;
+  border: var(--border);
+}
+
+.menu .box-container .box img {
+  height: 10rem;
+}
+
+.menu .box-container .box h3 {
+  color: #fff;
+  font-size: 15pt;
+  padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+  color: #fff;
+  font-size: 15pt;
+  padding: 1rem 0;
+}
+
+.menu .box-container .box img {
+  width: 150px;
+  height: 150px;
+}
+.menu .box-container .box a {
+  width: auto;
+}
+
+.menu .box-container .box:hover {
+  background: var(--black);
+}
+
+.menu .box-container .box:hover > * {
+  color: #fff;
+}
+
+/*******************************************************end*********************************************************/
+
+/*style untuk menu galery*/
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+  grid-gap: 5px;
+}
+
+.menu .wrapper img {
+  width: 300px;
+  height: 180px;
+}
+
+.box-img {
+  width: 300px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.box-img:hover {
+  transform: scale(1.1);
+}
+
+/**********************************end***************************************************************************/
+
+/*style untuk tampila contact*/
+.contact .heading {
+  padding: 70px;
+  font-size: 30pt;
+}
+
+.contact .row {
+  display: flex; /*ini memungkinkan anak dari halaman akan di atur secara horisontal atau vertikal*/
+  background: var(--black);
+}
+
+.contact .row .map {
+  flex: 1 1 45rem; /*untuk menentukan bagaimana elemen anak harus diubah ukurannya berdasarkan ruang yang tersedia*/
+  width: 100%;
+  object-fit: cover; /* membuat objek di skala sehingga objek tetap dalam ukuran elemen dan mencakup seluruh elemen tanpa distorsi.*/
+}
+
+.contact .row form {
+  flex: 1 1 45rem; /*untuk menentukan bagaimana elemen anak harus diubah ukurannya berdasarkan ruang yang tersedia*/
+  padding: 20px 30px;
+  text-align: center;
+}
+
+.contact .row form h3 {
+  text-transform: uppercase; /*semua huruf dalam teks akan diubah menjadi huruf besar.*/
+  font-size: 23pt;
+  color: #fff;
+}
+
+.contact .row form .inputbox {
+  display: flex; /*membuat elemen anak dapat merespons dengan baik terhadap perubahan ukuran*/
+  align-items: center;
+  margin-top: 25px; /* digunakan untuk menentukan jumlah ruang yang ditinggalkan di atas elemen. */
+  margin-bottom: 25px; /* digunakan untuk menentukan jumlah ruang yang ditinggalkan di bawah elemen. */
+  background: var(--bg);
+  border: var(--border);
+}
+
+.contact .row form .inputbox span {
+  color: #fff;
+  font-size: 15pt;
+  padding-left: 2rem;
+}
+
+.contact .row form .inputbox input {
+  width: 100%;
+  padding: 15px;
+  font-size: 15pt;
+  color: #fff;
+  text-transform: none; /*menyatakan bahwa teks tidak akan diubah dari bentuk aslinya.*/
+  background: none; /* tidak ada warna latar belakang yang ditentukan dan warna latar belakang akan mengikuti warna latar belakang dari elemen induknya.*/
+}
+
+/***************************************************end**********************************************************/
+
+/*style untuk bagian footer*/
+.footer {
+  background: var(--black);
+  text-align: center;
+}
+
+.footer .share {
+  padding: 10px 0;
+}
+
+.footer .share a {
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem; /*menentukan jarak antara garis teks dengan garis teks di atas dan di bawahnya*/
+  font-size: 20px;
+  color: #fff;
+  border: var(--border);
+  margin: 15px;
+  border-radius: 50px;
+}
+
+.footer .share a:hover {
+  color: var(--black);
+  background: var(--main-color);
+}
+
+.footer .link {
+  display: flex; /*memungkinkan posisi anak elemen yang lebih fleksibel dan maju di dalam container induk.*/
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  gap: 1rem; /*mengatur jarak sela sela menu*/
+}
+
+.footer .link a {
+  border-radius: 5px;
+  padding: 10px 2rem;
+  color: #fff;
+  border: var(--border);
+  font-size: 15pt;
+}
+
+.footer .link a:hover {
+  background: var(--main-color);
+  color: var(--bg);
+}
+
+.footer .credit {
+  font-size: 13pt;
+  color: #fff;
+  font-weight: lighter; /*properti ini mengatur berat font menjadi "ringan" yang membuat teks terlihat kurang tebal.*/
+  padding: 1.5rem;
+}
+
+.footer .credit span {
+  color: var(--main-color);
+}
+/**************************************************end************************************************************/
+
+/*media query*/
+/*Media query digunakan untuk menyesuaikan tampilan website agar sesuai dengan 
+ukuran layar yang berbeda-beda, seperti tampilan pada layar desktop, tablet, atau smartphone. */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  /*mengatur style untuk bagian icon menu untuk tampilan mobile*/
+  #menu-btn {
+    display: inline-block;
+  }
+  /*end*/
+
+  /*mengatur menu dropdown untuk tampilan mobile*/
+  .dropdown {
+    padding-left: 13px;
+  }
+
+  .dropdown-content {
+    background-color: #fff;
+  }
+  /*end*/
+
+  /*mengatur tampilan menu pada navbar jika di lihat dari tampilan mobile*/
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: #fff;
+    width: 30rem;
+    height: 60rem;
+  }
+
+  .header .navbar.active {
+    right: 0; /*mengatur jarak navbar dari samping kanan halaman*/
+  }
+
+  .header .navbar a {
+    color: var(--black);
+    display: block; /*mengatur teks agar posisinya vertikal*/
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .header .navbar button a {
+    color: var(--black);
+    display: block;
+    margin: 0;
+    padding: 5px;
+    font-size: 2rem;
+  }
+
+  /*************end*********************/
+
+  /*style untuk tampilan halaman depan web beserta isinya*/
+  .home {
+    background-position: left;
+    justify-content: center; /*Atribut ini menentukan bagaimana elemen anak dalam elemen terkait akan disusun secara horizontal.*/
+    text-align: center; /*Atribut ini menentukan bagaimana teks dalam elemen terkait akan disusun secara horizontal.*/
+  }
+
+  .home .content h3 {
+    font-size: 4.5rem;
+  }
+
+  .home .content h4 {
+    font-size: 2.5rem;
+  }
+
+  .home .content p {
+    font-size: 1.5rem;
+  }
+  /*end*/
+
+  /* style untuk bagian about */
+
+  .about .row {
+    justify-content: center; /*elemen anak dalam sebuah elemen induk harus diatur secara horizontal.*/
+    display: flex; /* mengubah tampilan elemen menjadi tampilan fleksibel.*/
+    text-align: center;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap; /*elemen anak akan dibungkus ke baris berikutnya jika tidak cukup ruang di baris saat ini.*/
+  }
+
+  /******************************end**************************************************/
+
+  /*style untuk bagian galery*/
+  .menu .wrapper .box-img {
+    align-items: center;
+  }
+  /*end*/
+
+  /**style untuk bagian contact**/
+  .contact .row {
+    display: flex;
+    background: var(--black);
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+/*end*/
